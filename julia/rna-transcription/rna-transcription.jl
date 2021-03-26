@@ -4,7 +4,7 @@ end
 
 function translate(c)
 	complements = Dict('G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U')
-	c ∈ keys(complements) || throw(ErrorException("Not a valid char"))
+	c ∈ keys(complements) || throw(ErrorException("Unknown nucleotide: $c"))
 	complements[c]
 end
 
