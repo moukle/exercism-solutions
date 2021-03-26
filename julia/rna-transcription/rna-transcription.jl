@@ -1,8 +1,8 @@
-function to_rna(dna)
-	join([translate(c) for c in dna])
+function to_rna(dna::AbstractString)
+	map(to_rna, dna)
 end
 
-function translate(c)
+function to_rna(c::Char)
 	complements = Dict('G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U')
 	c ∈ keys(complements) || throw(ErrorException("Unknown nucleotide: $c"))
 	complements[c]
